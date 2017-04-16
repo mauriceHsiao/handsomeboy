@@ -1,40 +1,38 @@
 計算方法分析與設計期中考
 =========================
 
-1.請至 github 中把檔案 fork 下來
 
+請把結果截圖並壓縮成zip，檔名為學號
+1. 請至 github 中把檔案 fork 下來，並以該檔作答，檔名請改成學號(5分)
+2. 用lambda算圓面積 πr^2，π請自己設為3.14，半徑為5，請算出面積(10分)
+3. 請印出3組10個亂數，且亂數不重複，順序不能一樣(10分)
 
+4. 請根據以下資料，用matplotlib印出圖表，包含title、xlabel、ylabel(25分)
+##### date = [2015-1-10,2015-1-11,2015-1-12,2015-1-13,2015-1-14,2015-1-15,2015-1-16,2015-1-17,2015-1-18,2015-1-19,2015-1-20] 
+##### temp = [16.7,17.4,17.1,20.3,16.2,16.1,17.5,15.3,16.8,16,18.4]
 
+![Alt text](/4.png)
 
+5. 請參考以下程式碼，並用亂數產生矩陣A跟B，並讓A跟B相加(25分)
 
+```python
+def shape(A):
+    num_rows = len(A)
+    num_cols = len(A[0]) if A else 0
+    return num_rows, num_cols
+def make_matrix(num_rows, num_cols, entry_fn):
+    return [[entry_fn(i, j) for j in range(num_cols)]
+            for i in range(num_rows)]
+def matrix_add(A, B):
+    if shape(A) != shape(B):
+        raise ArithmeticError("cannot add matrices with different shapes")
+    num_rows, num_cols = shape(A)
+    def entry_fn(i, j):
+        return A[i][j] + B[i][j]
+    return make_matrix(num_rows, num_cols, entry_fn)
 
+print matrix_add(A,B)
+```
 
-from:__[Data Science from Scratch](http://joelgrus.com/2015/04/26/data-science-from-scratch-first-principles-with-python/)__
-
-
-## Book of Contents(Finish Time)
-1. Introduction (2017/03/09)
-2. A Crash Course in Python (2017/03/16)
-3. [Visualizing Data](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/visualizing_data.py) (2017/03/23)
-4. [Linear Algebra](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/linear_algebra.py) (2017/03/30) 
-5. [Statistics](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/statistics.py) (2017/03/30)
-6. [Probability](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/probability.py) (2017/04/06)
-7. [Hypothesis and Inference](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/hypothesis_and_inference.py) (2017/04/06)
-8. [Gradient Descent](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/gradient_descent.py)  (2017/04/13) 
-9. [Getting Data](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/getting_data.py)
-10. [Working With Data](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/working_with_data.py)
-11. [Machine Learning](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/machine_learning.py)
-12. [k-Nearest Neighbors](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/nearest_neighbors.py)
-13. [Naive Bayes](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/naive_bayes.py)
-14. [Simple Linear Regression](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/simple_linear_regression.py)
-15. [Multiple Regression](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/multiple_regression.py)
-16. [Logistic Regression](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/logistic_regression.py)
-17. [Decision Trees](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/decision_trees.py)
-18. [Neural Networks](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/neural_networks.py)
-19. [Clustering](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/clustering.py)
-20. [Natural Language Processing](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/natural_language_processing.py)
-21. [Network Analysis](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/network_analysis.py)
-22. [Recommender Systems](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/recommender_systems.py)
-23. [Databases and SQL](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/databases.py)
-24. [MapReduce](https://github.com/joelgrus/data-science-from-scratch/blob/master/code/mapreduce.py)
-25. Go Forth And Do Data Science
+6. 請參考github上的第6題程式碼，並完成以下填空(紅底)
+ 

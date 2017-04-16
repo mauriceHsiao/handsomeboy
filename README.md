@@ -36,5 +36,5 @@ def matrix_add(A, B):
 print matrix_add(A,B)
 ```
 
-6. 請參考github上的第6題程式碼，並完成以下填空(紅底)
+6. 請參考github上的第6題程式碼，並完成以下填空(紅底)(25分)
 ![Alt text](/6.png)
